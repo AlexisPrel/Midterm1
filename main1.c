@@ -34,11 +34,11 @@ int main(void)
     printf("n1: %d    pi_leibniz(n1): %f\n",n1,pi);             /* and output desired value with corresponding approximation */
     printf("\n");                                               /* some space for output clarity */
    
-   	error = 1;                                                  /* re-initialisation of used variable */
+    error = 1;                                                  /* re-initialisation of used variable */
    	
-   	/* BBP Method: for comments refers to Leibniz method */
-   	printf("Using pi_bbp:\n");
-   	n2 = 1;
+    /* BBP Method: for comments refers to Leibniz method */
+    printf("Using pi_bbp:\n");
+    n2 = 1;
     while(error > eps)
     {
         pi = pi_bbp(n2);
@@ -51,13 +51,13 @@ int main(void)
     printf("n2: %d    pi_bbp(n2): %f\n",n2,pi);                 /* and output desired value with corresponding approximation */
     printf("\n");                                               /* some space for output clarity */
 
-	/* Timing for both functions */
-	t1 = precision_timer_leibniz(n1);
-	t2 = precision_timer_bbp(n2);
-	ratio = round(t1/t2);                                       /* round() makes the ratio be an integer */
-	/* Results output */
-	printf("t_leibniz: %20.15f sec per iteration\n",t1); 
-	printf("t_bbp: %20.15f sec per iteration\n",t2);
+    /* Timing for both functions */
+    t1 = precision_timer_leibniz(n1);
+    t2 = precision_timer_bbp(n2);
+    ratio = round(t1/t2);                                       /* round() makes the ratio be an integer */
+    /* Results output */
+    printf("t_leibniz: %20.15f sec per iteration\n",t1); 
+    printf("t_bbp: %20.15f sec per iteration\n",t2);
     printf("Ratio: %21.0f \n", ratio);
 
     return 0;

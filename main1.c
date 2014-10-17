@@ -15,7 +15,7 @@
 int main(void)
 {
     /* variable definitions sorted by order of first value assignement */
-    double error = 1, eps = pow(10,-6);							 /* error needs an initial value > eps for loops to start.*/
+    double error = 1, eps = pow(10,-6);							/* error needs an initial value > eps for loops to start.*/
     int n1, n2;
     double pi, t1, t2, ratio;
     
@@ -25,12 +25,12 @@ int main(void)
     while(error > eps)											/* as long as the error is bigger than our targetted precisiob*/
     {
     	pi = pi_leibniz(n1);									/* we calculate an approximation of pi ... */
-        error = fabs(pi - M_PI); 								/* ... and its absolute error ... */        
+        error = fabs(pi - M_PI);								/* ... and its absolute error ... */        
         printf("%8d   %20.15f   %20.15f\n", n1, pi, error);
     	n1 += pow(10,5);										/* ... for increasing values of n1. */
     }
     
-    n1 -= pow(10,5); 											/* we undo the last incrementation */
+    n1 -= pow(10,5);											/* we undo the last incrementation */
     printf("n1: %d    pi_leibniz(n1): %f\n",n1,pi);				/* and output desired value with corresponding approximation */
     printf("\n");												/* some space for output clarity */
    
@@ -42,12 +42,12 @@ int main(void)
     while(error > eps)
     {
         pi = pi_bbp(n2);
-        error = fabs(pi - M_PI); 								/* absolute error */
+        error = fabs(pi - M_PI);								/* absolute error */
         printf("%8d   %20.15f   %20.15f\n", n2, pi, error);
         n2 += 1;
     }
     
-    n2 -= 1; 													/* we undo the last incrementation */
+    n2 -= 1;													/* we undo the last incrementation */
     printf("n2: %d    pi_bbp(n2): %f\n",n2,pi);					/* and output desired value with corresponding approximation */
     printf("\n");												/* some space for output clarity */
 

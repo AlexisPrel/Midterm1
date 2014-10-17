@@ -1,10 +1,9 @@
 # Phys 2200 - Computational Physics - Midterm Project 1
 ## General informations
--------	-----------:
-Author	Alexis Prel 
-Updated	10/16/2014
 
-*Note: It is quite useless to mention those informations, but bragging with Markdown tables is fun.*
+Author:	Alexis Prel 
+Last updated:	10/17/2014
+
 ___
  
 ## Objectives
@@ -26,14 +25,14 @@ ___
 ## In more details
 ### Series implemented
 - The [Leibniz series](http://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80) read as follow: ![leibniz formula](http://upload.wikimedia.org/math/4/b/3/4b325f4142cab62b1786d8be1ac3be60.png)
-- The [Bailey-Borwein-Plouffe series](http://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula) have a similar structure ![BBP formula](http://upload.wikimedia.org/math/5/3/5/535d2d106b4243d1f9872f916b273c7a.png)
+- The [Bailey-Borwein-Plouffe series](http://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula) have a similar structure: ![BBP formula](http://upload.wikimedia.org/math/5/3/5/535d2d106b4243d1f9872f916b273c7a.png)
 
 Those series have common features:
 - they are a sum over k of a function u(k)
 - they converge to pi
 - they are infinite and thus can not be calculated numerically. However, we can approximate the result by summing from 0 to **n**, where **n** is a finite integer.
 
-A "for" loop thus do the sum quite simply.
+A for loop thus do the sum quite simply.
 
 ```C
 for(int k=0;k<=n;k++)
@@ -66,13 +65,15 @@ In particular:
 1. we first do a first approximation of the execution time
 2. we deduce the number **n** of iterations needed for the total execution time of the loop to be  approx. 5-10s
 3. we take a more precise measurement with the loop iterated **n** times.
-### Comparisation
+### Comparison
+Our last task is to take the ratio between the two times returned by the timers. It is rounded to the closest integer using the function **round()** from the math library. 
+We note that the ratio is particularly big! Of the order of 10^6 ! The BBP algorithm is thus way faster and efficient.
 
 ###  Additional information
-The script [pi_funs.h](./pi_funs.h) allows a fast declaration of [pi_leibniz.c](./pi_leibniz.c) and [pi_bbp.c](./pi_bbp.c) in [the main function](./main1.c).
-The [Makefile](./Makefile) asks the compiler for the creation of an executable **main1**, specifying its dependencies and the libraries needed.
-The [gitignore file](./.gitignore) file allows updates without including files produced during compilation, or any other unwanted file.
-The [readme](./readme.md) should not requires explanations, otherwise we would shift way to much on the right of the following axis: 
+- The script [pi_funs.h](./pi_funs.h) allows a fast declaration of [pi_leibniz.c](./pi_leibniz.c) and [pi_bbp.c](./pi_bbp.c) in [the main function](./main1.c).
+- The [Makefile](./Makefile) asks the compiler for the creation of an executable **main1**, specifying its dependencies and the libraries needed.
+- The [gitignore file](./.gitignore) file allows updates without including files produced during compilation, or any other unwanted file.
+- The [readme](./readme.md) should not requires explanations, otherwise we would shift way to much on the right of the following axis: 
 
 
 ![credits go to http://xkcd.com/1343](http://imgs.xkcd.com/comics/manuals.png)

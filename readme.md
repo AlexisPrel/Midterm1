@@ -2,7 +2,7 @@
 ## General informations
 
 Author:	Alexis Prel 
-Last updated:	10/17/2014
+Last updated:	11/3/2014
 
 ___
  
@@ -38,6 +38,8 @@ A for loop thus do the sum quite simply.
 for(int k=0;k<=n;k++)
 	pi_approx += ... /* expression of u(k)  comes here*/
 ```
+
+In order to reduce the time of execution, some terms appearing in the formula of u(k) are stored in variables whose value is updated at each iteration.
 
 Those two series are implemented in [pi_leibniz.c](./pi_leibniz.c) and [pi_bbp.c](./pi_bbp.c), which are thus extremely similar.
 Actually, only the expression of u(k) differs, and a factor 4 introduced by Leibniz formula (*cf. above*).
